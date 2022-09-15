@@ -5,8 +5,6 @@ r = requests.get(URL)
 
 soup = BeautifulSoup(r.content, 'html.parser') # If this line causes an error, run 'pip install html5lib' or install html5lib
 
-path = 'serdar.xlsx'
-
 for link in soup.body.nav.find_all('a'):
     name = link.get("href")
     newURL = URL+ name
